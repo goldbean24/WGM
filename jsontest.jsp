@@ -39,7 +39,7 @@ while(rs.next()){
 	
 }
 stmt.close();
-conn.close();
+conn.close(); //주석
 %>
     </body>
 

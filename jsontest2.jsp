@@ -1,7 +1,7 @@
 <%@ page session="false" %>
 <%
 
-	//
+	//테스트 수정
 %>
 <%= application.getRealPath("/") %>
 <!DOCTYPE html>
