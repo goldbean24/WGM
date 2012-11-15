@@ -32,16 +32,21 @@
 		</div> 
 		<!-- header end -->
 		
-		<div data-role="content" >
+		<div data-role="content" data-theme="d">
 			<p  style="text-align: center; clear: none; float: none;"><img src="./img/home_chart.jpg" ></p>
-			<a href=#noti data-role="button">위치알람</a>
-			<a href=#check data-role="button">자가진단</a>
-			<a href=#org_list data-role="button">기관정보</a>
+			<a href=#noti data-role="button" data-theme="b">위치알람</a>
+			<a href=#check data-role="button" data-theme="b">자가진단</a>
+			<a href=#org_list data-role="button" data-theme="b">기관정보</a>
 		</div>
+		
+		<div data-role="footer" data-theme="z"  class="egovBar">
+			<h4>Copyright(c)2012 Mozips.</h4>
+		</div>
+		
 	</div>
-	<div id="noti" data-role="page">
-		<div data-role="header"  data-position="fixed">
-			<h1>위치알람</h1>
+	<div id="noti" data-role="page" class="type-index" >
+		<div data-role="header"  data-position="inline" data-theme="z"  class="egovBarHeader">
+			<h4>위치알람</h4>
 			<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">이전</a>
 		</div>  
 		
@@ -60,8 +65,8 @@
 			</div>
 		</div>
 	</div>	
-	<div id="check" data-role="page">
-		<div data-role="header" data-position="fixed">
+	<div id="check" data-role="page" class="type-index" >
+		<div data-role="header"  data-position="inline" data-theme="z"  class="egovBarHeader">
 			<h1>자가진단</h1>
 			<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">이전</a>
 		</div>  
@@ -89,7 +94,7 @@
 			</p>
 		</div>
 		
-		<div data-role="footer" data-position="fixed">
+		<div data-role="footer"  data-position="inline" data-theme="z"  class="egovBarHeader">
 			<div data-role="navbar">
 				<ul>
 					<li><a href=#home data-icon="home">홈</a></li>
@@ -100,13 +105,22 @@
 			</div>
 		</div>
 	</div>		
-	<div id="org_list" data-role="page">
-		<div data-role="header"  data-position="fixed">
+	<div id="org_list" data-role="page" class="type-index" >
+		<div data-role="header" data-theme="b" class="egovBarHeader">
 			<h1>기관정보</h1>
 			<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">이전</a>
+		
 		</div>  
 		
 		<div data-role="content"  >
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" class="ui-btn-active egov-btn-corner-tl">지역</a></li>
+					<li><a href="#">비용</a></li>
+					<li><a href="#" class="egov-btn-corner-tr">지원</a></li>
+				</ul>
+			</div>
+
 			<div  data-role="fieldcontain" >
 				<fieldset data-role="controlgroup" data-type="horizontal" >						
 					<input id="group1" type="radio" name="group"/>
@@ -150,13 +164,13 @@
 		</div>
 	</div>	
 
-	<div id="org_detail" data-role="page">
-		<div data-role="header"  data-position="fixed">
+	<div id="org_detail" data-role="page" class="type-index" >
+		<div data-role="header"   data-position="inline" data-theme="z"  class="egovBarHeader">
 			<h1>기관정보</h1>
 			<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">이전</a>
 		</div>  
 		
-		<div data-role="content"  >
+		<div data-role="content" data-theme="d" >
 			<h2>참사랑요양원</h2>
 			<ul data-role="listview">
 				<li>
