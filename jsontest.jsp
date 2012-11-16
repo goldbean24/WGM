@@ -1,17 +1,14 @@
 <%@ page session="false" %>
-<%@ page import="java.sql.*" %>
+<%@ page contentType="text/html;charset=utf-8" %>
+<%@include file="./include_jsp/dbconOpen.jsp" %>
 <%
-	String dbUrl = "jdbc:mysql://mysql2.hosting.paran.com:3306/wbr76_db"; 
-	Class.forName("com.mysql.jdbc.Driver");
-	Connection conn = DriverManager.getConnection(dbUrl, "wbr76","strato56");
-	
-	Statement stmt = conn.createStatement();
 
-	String sql = "select addon, is_used, date_format(regdate, '%Y%m%d') as regdate from xe_addons where is_used = 'Y' ";
-	
+	String sql = "select id, choice,computerchoice, date_format(datetime, '%Y%m%d') as regdate, judgement from game ";
 
 	ResultSet rs = stmt.executeQuery(sql);
-	
+
+
+//	String sql = "select addon, is_used, date_format(regdate, '%Y%m%d') as regdate from xe_addons where is_used = 'Y' ";
 %>
 <!DOCTYPE html>
 
@@ -21,26 +18,29 @@
         <link href="favicon.ico" rel="icon" type="image/x-icon" />
         <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <link href="tomcat.css" rel="stylesheet" type="text/css" />
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
     </head>
 
     <body>
 
 <%
-while(rs.next()){
+	while(rs.next()){
+		
+		out.print(rs.getString("id"));
+		out.print(" || ");
+		out.print(rs.getString("choice"));
+		out.print(" || ");
+		out.print(rs.getString("computerchoice"));
+		out.print(" || ");
+		out.print(rs.getString("regdate"));
+		out.print(" || ");
+		out.print(rs.getString("judgement"));
+		out.print("<br>");
 	
-	out.print(rs.getString("addon"));
-	out.print(" || ");
-	out.print(rs.getString("is_used"));
-	out.print(" || ");
-	out.print(rs.getString("regdate"));
-	out.print("<br>");
-	
-	
-}
-stmt.close();
-conn.close(); //주석
+	}
 %>
     </body>
 
 </html>
+
+<%@include file="./include_jsp/dbconClose.jsp" %>
